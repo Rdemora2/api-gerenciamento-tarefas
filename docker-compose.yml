@@ -10,3 +10,11 @@ services:
       POSTGRES_PASSWORD: rdemora2
     ports:
       - "5432:5432"
+
+  node-app:
+    build: .
+    container_name: task-node-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
