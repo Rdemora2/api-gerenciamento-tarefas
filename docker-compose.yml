@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    container_name: task-manager-db
+    environment:
+      POSTGRES_DB: task_manager
+      POSTGRES_USER: rdemora2
+      POSTGRES_PASSWORD: rdemora2
+    ports:
+      - "5432:5432"
