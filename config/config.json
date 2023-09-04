@@ -3,7 +3,7 @@
       "username": "rdemora2",
       "password": "rdemora2",
       "database": "task_manager",
-      "host": "localhost",
+      "host": "postgres",
       "dialect": "postgres"
     }
   }

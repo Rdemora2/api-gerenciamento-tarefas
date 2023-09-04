@@ -1,9 +1,8 @@
 const { Sequelize } = require('sequelize');
 
-
-const sequelize = new Sequelize('postgres://rdemora2:rdemora2@localhost:5432/task_manager', {
+const sequelize = new Sequelize('task_manager', 'rdemora2', 'rdemora2', {
+  host: 'postgres',
   dialect: 'postgres',
-  logging: false,
 });
 
 module.exports = sequelize;
