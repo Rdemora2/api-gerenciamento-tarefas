@@ -28,10 +28,16 @@ Pré-requisitos: Docker
 git clone https://github.com/Rdemora2/api-gerenciamento-tarefas.git
 
 # buildar os containers docker
-docker compose build
+docker-compose build
 
 # subir os containers
-docker compose up
+docker-compose up -d
+
+# abrir shell no container
+docker exec -ti nodeApp-task-manager bash
+
+# fazer migrações
+npx sequelize-cli db:migrate
 
 # acessar a url da api
 backend: http://localhost:3000/
