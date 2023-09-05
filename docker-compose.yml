@@ -3,7 +3,7 @@ version: '3'
 services:
   postgres:
     image: postgres
-    container_name: task-manager-db
+    container_name: db-task-manager
     environment:
       POSTGRES_DB: task_manager
       POSTGRES_USER: rdemora2
@@ -13,7 +13,7 @@ services:
 
   node-app:
     build: .
-    container_name: task-node-app
+    container_name: nodeApp-task-manager
     ports:
       - "3000:3000"
     depends_on:
