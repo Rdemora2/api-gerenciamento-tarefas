@@ -1,4 +1,4 @@
-const Task = require('../models/task');
+const taskService = require('../services/taskService');
 
 // Função centralizada para tratamento de erros
 const handleErrors = (res, error, errorMessage) => {
@@ -10,7 +10,7 @@ const handleErrors = (res, error, errorMessage) => {
 exports.createTask = async (req, res) => {
   try {
     const { title, description, status } = req.body;
-    const task = await Task.create({ title, description, status });
+    const task = await taskService.createTask(title, description, status);
 
     return res.status(201).json(task);
   } catch (error) {
@@ -21,7 +21,7 @@ exports.createTask = async (req, res) => {
 // Controlador para listar todas as tarefas
 exports.getAllTasks = async (req, res) => {
   try {
-    const tasks = await Task.findAll();
+    const tasks = await taskService.getAllTasks();
 
     return res.status(200).json(tasks);
   } catch (error) {
@@ -33,7 +33,7 @@ exports.getAllTasks = async (req, res) => {
 exports.getTaskById = async (req, res) => {
   const taskId = req.params.taskId;
   try {
-    const task = await Task.findByPk(taskId);
+    const task = await taskService.getTaskById(taskId);
 
     if (!task) {
       return res.status(404).json({ error: 'Tarefa não encontrada' });
@@ -50,17 +50,11 @@ exports.updateTask = async (req, res) => {
   const taskId = req.params.taskId;
   const { title, description, status } = req.body;
   try {
-    const task = await Task.findByPk(taskId);
+    const task = await taskService.updateTask(taskId, title, description, status);
 
     if (!task) {
       return res.status(404).json({ error: 'Tarefa não encontrada' });
     }
-
-    task.title = title;
-    task.description = description;
-    task.status = status;
-
-    await task.save();
 
     return res.status(200).json(task);
   } catch (error) {
@@ -72,13 +66,11 @@ exports.updateTask = async (req, res) => {
 exports.deleteTask = async (req, res) => {
   const taskId = req.params.taskId;
   try {
-    const task = await Task.findByPk(taskId);
+    const success = await taskService.deleteTask(taskId);
 
-    if (!task) {
+    if (!success) {
       return res.status(404).json({ error: 'Tarefa não encontrada' });
     }
-
-    await task.destroy();
 
     return res.status(204).json();
   } catch (error) {
@@ -90,9 +82,7 @@ exports.deleteTask = async (req, res) => {
 exports.getTasksByStatus = async (req, res) => {
   try {
     const { status } = req.params;
-    const tasks = await Task.findAll({
-      where: { status },
-    });
+    const tasks = await taskService.getTasksByStatus(status);
 
     return res.status(200).json(tasks);
   } catch (error) {

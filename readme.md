@@ -151,7 +151,7 @@ backend: http://localhost:3000/
 
 ## Listagem Tarefa por ID
 
-**Endpoint:** http://localhost:3000/api/tasks/{taskID}
+**Endpoint:** http://localhost:3000/api/tasks/{taskID_desejado}
 
 **Método:** GET
 
@@ -236,7 +236,7 @@ backend: http://localhost:3000/
 
 ## Exclusão de Tarefa
 
-**Endpoint:** http://localhost:3000/api/tasks/{taskID}
+**Endpoint:** http://localhost:3000/api/tasks/{taskID_desejado}
 
 **Método:** DELETE
 
