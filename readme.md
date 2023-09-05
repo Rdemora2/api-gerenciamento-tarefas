@@ -63,6 +63,7 @@ backend: http://localhost:3000/
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjkzODY3ODQyLCJleHAiOjE2OTM5NTQyNDJ9.5oekHX_68fXeVdAGuB7EtOmHDdrJMzUkVdhe-OAL31s"
 }
 ```
+- OBS: token JWT válido por 1 dia
 
 ## Login de Usuário
 
@@ -84,6 +85,7 @@ backend: http://localhost:3000/
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjkzODY3ODQyLCJleHAiOjE2OTM5NTQyNDJ9.5oekHX_68fXeVdAGuB7EtOmHDdrJMzUkVdhe-OAL31s"
 }
 ```
+- OBS: token JWT válido por 1 dia
 
 ## Criação de Tarefa
 
@@ -100,7 +102,7 @@ backend: http://localhost:3000/
     "token": "Token de Acesso JWT"
 }
 ```
-Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
+- Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
 
 **Formato de Resposta:**
 ```json
@@ -123,7 +125,7 @@ Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
 **Formato de Requisição:**
 ```json
 ```
-Esse endpoint não necessita de nada na requisição, nem do token, pois serve apenas para visualização das tarefas
+- Esse endpoint não necessita de nada na requisição, nem do token, pois serve apenas para visualização das tarefas
 
 **Formato de Resposta:**
 ```json
@@ -156,8 +158,7 @@ Esse endpoint não necessita de nada na requisição, nem do token, pois serve a
 **Formato de Requisição:**
 ```json
 ```
-Esse endpoint não necessita de nada na requisição, nem do token, pois serve apenas para visualização da tarefa
-```
+- Esse endpoint não necessita de nada na requisição, nem do token, pois serve apenas para visualização da tarefa
 
 **Formato de Resposta:**
 ```json
@@ -186,7 +187,7 @@ Esse endpoint não necessita de nada na requisição, nem do token, pois serve a
     "token": "Token de Acesso JWT"
 }
 ```
-Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
+- Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
 
 **Formato de Resposta:**
 ```json
@@ -212,12 +213,12 @@ Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
   "token": "Token de Acesso JWT"
 }
 ```
-Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
+- Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
 
 **Formato de Resposta:**
 ```json
 ```
-Esse endpoint não retorna nada, caso obtenha sucesso na exclusão
+- Esse endpoint não retorna nada, caso obtenha sucesso na exclusão
 
 # Autor
 
