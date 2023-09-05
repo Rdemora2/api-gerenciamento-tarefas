@@ -96,6 +96,9 @@ app.get('/api/tasks', taskController.getAllTasks);
 // Rota de listagem de tasks por ID
 app.get('/api/tasks/:taskId', taskController.getTaskById);
 
+// Rota de listagem de tasks por status
+app.get('/api/tasks/status/:status', taskController.getTasksByStatus);
+
 // Rota de edição de tasks
 app.put('/api/tasks/:taskId', authenticationMiddleware, taskController.updateTask);
 

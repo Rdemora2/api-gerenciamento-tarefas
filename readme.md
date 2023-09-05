@@ -172,6 +172,39 @@ backend: http://localhost:3000/
 }
 ```
 
+## Listagem Tarefa por status
+
+**Endpoint:** http://localhost:3000/api/tasks/status/{status}
+
+**Método:** GET
+
+**Formato de Requisição:**
+```json
+```
+- Esse endpoint não necessita de nada na requisição, nem do token, pois serve apenas para visualização das tarefas
+
+**Formato de Resposta:**
+```json
+[
+  {
+    "id": 1,
+    "title": "Nome da Tarefa",
+    "description": "Descrição da tarefa",
+    "status": "Status da tarefa",
+    "createdAt": "Data de Criação",
+    "updatedAt": "Data de Atualização"
+  },
+  {
+    "id": 2,
+    "title": "Nome da Tarefa 2",
+    "description": "Descrição da tarefa 2",
+    "status": "Status da tarefa",
+    "createdAt": "Data de Criação",
+    "updatedAt": "Data de Atualização"
+  }
+]
+```
+
 ## Edição de Tarefa
 
 **Endpoint:** http://localhost:3000/api/tasks/{taskID}
