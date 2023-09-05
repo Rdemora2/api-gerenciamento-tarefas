@@ -1,5 +1,11 @@
 const Task = require('../models/task');
 
+// Função centralizada para tratamento de erros
+const handleErrors = (res, error, errorMessage) => {
+  console.error(error);
+  return res.status(500).json({ error: errorMessage });
+};
+
 // Controlador para criar uma nova tarefa
 exports.createTask = async (req, res) => {
   try {
@@ -8,8 +14,7 @@ exports.createTask = async (req, res) => {
 
     return res.status(201).json(task);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Erro ao criar tarefa' });
+    return handleErrors(res, error, 'Erro ao criar tarefa');
   }
 };
 
@@ -20,8 +25,7 @@ exports.getAllTasks = async (req, res) => {
 
     return res.status(200).json(tasks);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Erro ao listar tarefas' });
+    return handleErrors(res, error, 'Erro ao listar tarefas');
   }
 };
 
@@ -37,8 +41,7 @@ exports.getTaskById = async (req, res) => {
 
     return res.status(200).json(task);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Erro ao obter tarefa por ID' });
+    return handleErrors(res, error, 'Erro ao obter tarefa por ID');
   }
 };
 
@@ -61,8 +64,7 @@ exports.updateTask = async (req, res) => {
 
     return res.status(200).json(task);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Erro ao atualizar tarefa' });
+    return handleErrors(res, error, 'Erro ao atualizar tarefa');
   }
 };
 
@@ -80,11 +82,11 @@ exports.deleteTask = async (req, res) => {
 
     return res.status(204).json();
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Erro ao excluir tarefa' });
+    return handleErrors(res, error, 'Erro ao excluir tarefa');
   }
 };
 
+// Controlador para buscar tarefas por status
 exports.getTasksByStatus = async (req, res) => {
   try {
     const { status } = req.params;
@@ -94,7 +96,6 @@ exports.getTasksByStatus = async (req, res) => {
 
     return res.status(200).json(tasks);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Erro ao buscar tarefas por status' });
+    return handleErrors(res, error, 'Erro ao buscar tarefas por status');
   }
 };
