@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
   const { token } = req.body;
 
   if (!token) {
-    return res.status(401).json({ error: 'Token não fornecido' });
+    return res.status(403).json({ error: 'Token não fornecido no corpo da solicitação' });
   }
 
   try {
@@ -15,6 +15,6 @@ module.exports = (req, res, next) => {
 
     return next();
   } catch (err) {
-    return res.status(401).json({ error: 'Token inválido' });
+    return res.status(403).json({ error: 'Token inválido ou expirado' });
   }
 };
