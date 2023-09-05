@@ -44,7 +44,7 @@ backend: http://localhost:3000/
 # Endpoints:
 ## Registro de Usuário
 
-**Endpoint:** http://localhost:3000/api/register
+**Endpoint:** http://localhost:3000/api/auth/register
 
 **Método:** POST
 
@@ -67,7 +67,7 @@ backend: http://localhost:3000/
 
 ## Login de Usuário
 
-**Endpoint:** http://localhost:3000/api/login
+**Endpoint:** http://localhost:3000/api/auth/login
 
 **Método:** POST
 
