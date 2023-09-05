@@ -91,10 +91,10 @@ app.post('/api/login', async (req, res) => {
 app.post('/api/tasks', authenticationMiddleware, taskController.createTask);
 
 // Rota de listagem geral de tasks
-app.get('/api/tasks', authenticationMiddleware, taskController.getAllTasks);
+app.get('/api/tasks', taskController.getAllTasks);
 
 // Rota de listagem de tasks por ID
-app.get('/api/tasks/:taskId', authenticationMiddleware, taskController.getTaskById);
+app.get('/api/tasks/:taskId', taskController.getTaskById);
 
 // Rota de edição de tasks
 app.put('/api/tasks/:taskId', authenticationMiddleware, taskController.updateTask);
