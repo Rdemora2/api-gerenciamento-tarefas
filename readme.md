@@ -174,7 +174,7 @@ backend: http://localhost:3000/
 
 ## Listagem Tarefa por status
 
-**Endpoint:** http://localhost:3000/api/tasks/status/{status}
+**Endpoint:** http://localhost:3000/api/tasks/status/{status_desejado}
 
 **Método:** GET
 
@@ -207,7 +207,7 @@ backend: http://localhost:3000/
 
 ## Edição de Tarefa
 
-**Endpoint:** http://localhost:3000/api/tasks/{taskID}
+**Endpoint:** http://localhost:3000/api/tasks/{taskID_desejado}
 
 **Método:** PUT
 
