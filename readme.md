@@ -1,8 +1,7 @@
 # Api de gerenciamento de tarefas(CRUD)
 
 ## Sobre o projeto:
-Projeto de uma API RESTful completa, pronta para integração com frontend, todo seu código esta organizado utilizando o padrão MSC (Model-Service-Controller).
-Para maior segurança, foi utilizado token JWT para proteger as rotas de criação, atualização e exclusão de tarefas. Fora isso, também foi usada criptografia(bcrypt) para proteger a senha do usuário durante o fluxo de cadastro e login
+Projeto de uma API RESTful completa, pronta para integração com frontend. Sua estrutura foi organizada utilizando o padrão MSC (Model-Service-Controller) e, para maior segurança, foi utilizado token JWT para proteger as rotas de criação, atualização e exclusão de tarefas. Fora isso, também foi usada criptografia(bcrypt) para proteger a senha do usuário durante o fluxo de cadastro e login
 
 # Tecnologias utilizadas
 ## Back end
