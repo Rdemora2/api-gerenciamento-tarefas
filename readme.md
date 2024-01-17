@@ -251,7 +251,6 @@ backend: http://localhost:3000/
   "token": "Token de Acesso JWT"
 }
 ```
-- Campos de status Aceitos: 'pendente', 'em andamento', 'concluída'
 
 **Formato de Resposta:**
 ```json
