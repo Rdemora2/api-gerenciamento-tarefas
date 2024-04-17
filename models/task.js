@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
+const User = require('./User');
 
 const Task = sequelize.define('Task', {
   title: {
@@ -14,5 +15,7 @@ const Task = sequelize.define('Task', {
     defaultValue: 'pendente',
   },
 });
+
+Task.belongsTo(User, { foreignKey: 'userId' });
 
 module.exports = Task;

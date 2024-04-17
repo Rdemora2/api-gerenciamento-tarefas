@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:latest
 
 WORKDIR /app
 
@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["node", "app.js"]
+CMD ["bash", "-c", "npm install && npx sequelize-cli db:migrate && npm start"]

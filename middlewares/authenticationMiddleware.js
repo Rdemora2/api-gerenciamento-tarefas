@@ -2,11 +2,13 @@ const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
 
 module.exports = (req, res, next) => {
-  const { token } = req.body;
+  const authHeader = req.headers.authorization;
 
-  if (!token) {
-    return res.status(403).json({ error: 'Token não fornecido no corpo da solicitação' });
+  if (!authHeader) {
+    return res.status(403).json({ error: 'Token não fornecido no cabeçalho da solicitação' });
   }
+
+  const [, token] = authHeader.split(' ');
 
   try {
     const decoded = jwt.verify(token, authConfig.secret);
